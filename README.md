@@ -6,9 +6,9 @@ Este repositório contém a estrutura inicial de um sistema de hotelaria, desenv
 
 O projeto está dividido em duas partes principais:
 
-projeto-ESS/
-├── frontend/ # Interface do usuário (React + Vite)
-├── backend/  # API e lógica de negócio (Node.js + Express)
+- projeto-ESS/
+-- frontend/ (React + Vite)
+-- backend/  (Node.js + Express)
 
 ## 🚀 Tecnologias Utilizadas
 
