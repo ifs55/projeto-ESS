@@ -1,8 +1,8 @@
-# 🏨 Sistema de Hotelaria - Projeto ESS
+# Sistema de Hotelaria - Projeto ESS
 
 Este repositório contém a estrutura inicial de um sistema de hotelaria, desenvolvido como parte da disciplina de **Engenharia de Software e Sistemas (ESS)**.
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 O projeto está dividido em duas partes principais:
 
@@ -10,7 +10,7 @@ O projeto está dividido em duas partes principais:
   - frontend/ (React + Vite)
   - backend/ (Node.js + Express)
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### Frontend (React)
 - [React](https://reactjs.org/)
@@ -20,12 +20,12 @@ O projeto está dividido em duas partes principais:
 - [Node.js](https://nodejs.org/)
 - [Express](https://expressjs.com/)
 
-## 🔧 Como executar o projeto
+## Como executar o projeto
 
 ### Pré-requisitos:
 - [Node.js](https://nodejs.org/) instalado
 
-### 🖥️ Rodando o Frontend
+### Rodando o Frontend
 
 ```bash
 cd frontend
@@ -33,7 +33,7 @@ npm install
 npm run dev
 ```
 
-### 🖥️ Rodando o Backend
+### Rodando o Backend
 
 ```bash
 cd backend
@@ -41,7 +41,7 @@ npm install
 node index.js
 ```
 
-### 🧑‍💻 Equipe 
+### Equipe 
 
 - ELLIAN DOS SANTOS RODRIGUES
 - ROSEANE OLIVEIRA CAVALCANTE GAMA
