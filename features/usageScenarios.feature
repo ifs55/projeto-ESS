@@ -1,0 +1,50 @@
+Scenario: Successful hotel room search
+  Given that I am logged in as the user "Ana Clara" with the password "1234"
+  And that my user is a guest
+  And that I am on the page "Available Rooms"
+  When I select the period from "01/05/2025" to "10/06/2025"
+  And I select the location "Recife"
+  And I select "2" as the number of adults
+  And I confirm my search
+  Then I am on the "Results" page
+  And I can see a list of available hotel rooms in "Recife" for the dates
+  "01/05/2025" to "10/06/2025" that allow for "2" adults
+
+Scenario: Incomplete hotel room search
+  Given that I am logged in as the user "Ana Clara" with the password "1234"
+  And that my user is a guest
+  And that I am on the page "Available Rooms"
+  When I select the period from "01/05/2025" to "10/06/2025"
+  And I select the location "Recife"
+  And I confirm my search
+  Then I am still on the "Available Rooms" page
+  And I receive an error message that states "Incomplete information"
+
+Scenario: Successful publishing of a hotel room
+  Given that I am logged in as the user "Guilherme Fernandes" with the password "1234"
+  And that my user is a hotel manager
+  And that I am on the page "My Hotel Rooms"
+  When I select the option "Add New Hotel Room"
+  And I fill in "Chalé" as the hotel type
+  And I fill in "2" as the number of adults it can accommodate
+  And I fill in R$ "100,00" as the daily cost of booking
+  And I add the photo "example.png"
+  And I fill in "Quarto 30" as the identifier
+  And I confirm
+  Then I am still on the "My Hotel Rooms" page
+  And I see a success message
+  And I can see the hotel room with ID "Quarto 30" listed
+  And the system adds the hotel room with ID "Quarto 30" to my hotel
+
+Scenario: Unsuccessful publishing of a hotel room
+  Given that I am logged in as the user "Guilherme Fernandes" with the password "1234"
+  And that my user is a "hotel manager"
+  And that I am on the page "My Hotel Rooms"
+  When I select the option "Add New Hotel Room"
+  And I fill in "Chalé" as the hotel type
+  And I fill in "2" as the number of adults it can accommodate
+  And I fill in R$ "100,00" as the daily cost of booking
+  And I add the photo "example.png"
+  And I confirm
+  Then I am still on the "Add New Hotel Room"" section
+  And I receive an error message that states "Incomplete information"
