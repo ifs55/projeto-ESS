@@ -1,7 +1,7 @@
 Scenario: Successful hotel room search
-  Given that I am logged in as the user "Ana Clara" with the password "1234"
+  Given that I am logged in as the user "ana.clara@gmail.com" with the password "1234"
   And that my user is a guest
-  And that I am on the page "Available Rooms"
+  And that I am on the page "/available-rooms"
   When I select the period from "01/05/2025" to "10/06/2025"
   And I select the location "Recife"
   And I select "2" as the number of adults
@@ -13,7 +13,7 @@ Scenario: Successful hotel room search
 Scenario: Incomplete hotel room search
   Given that I am logged in as the user "Ana Clara" with the password "1234"
   And that my user is a guest
-  And that I am on the page "Available Rooms"
+  And that I am on the page "/available-rooms"
   When I select the period from "01/05/2025" to "10/06/2025"
   And I select the location "Recife"
   And I confirm my search
@@ -21,25 +21,25 @@ Scenario: Incomplete hotel room search
   And I receive an error message that states "Incomplete information"
 
 Scenario: Successful publishing of a hotel room
-  Given that I am logged in as the user "Guilherme Fernandes" with the password "1234"
+  Given that I am logged in as the user "guilherme.fernandes@gmail.com" with the password "1234"
   And that my user is a hotel manager
-  And that I am on the page "My Hotel Rooms"
+  And that I am on the page "/hotel/rooms"
   When I select the option "Add New Hotel Room"
-  And I fill in "Chalé" as the hotel type
+  And I fill in "Cottage" as the hotel type
   And I fill in "2" as the number of adults it can accommodate
   And I fill in R$ "100,00" as the daily cost of booking
   And I add the photo "example.png"
-  And I fill in "Quarto 30" as the identifier
+  And I fill in "30" as the identifier for the cottage
   And I confirm
   Then I am still on the "My Hotel Rooms" page
-  And I see a success message
-  And I can see the hotel room with ID "Quarto 30" listed
+  And I see a success message that states “Hotel Room Added”
+  And I can see the hotel room with ID "Cottage 30" listed
   And the system adds the hotel room with ID "Quarto 30" to my hotel
 
 Scenario: Unsuccessful publishing of a hotel room
   Given that I am logged in as the user "Guilherme Fernandes" with the password "1234"
   And that my user is a "hotel manager"
-  And that I am on the page "My Hotel Rooms"
+  And that I am on the page "/hotel/rooms"
   When I select the option "Add New Hotel Room"
   And I fill in "Chalé" as the hotel type
   And I fill in "2" as the number of adults it can accommodate
