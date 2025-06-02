@@ -1,5 +1,5 @@
 Scenario: Successful hotel room search
-  Given that I am logged in as the user "ana.clara@gmail.com" with the password "1234"
+  Given that I am logged in with the email "ana.clara@gmail.com" with the password "1234"
   And that my user is a guest
   And that I am on the page "/available-rooms"
   When I select the period from "01/05/2025" to "10/06/2025"
@@ -11,7 +11,7 @@ Scenario: Successful hotel room search
   "01/05/2025" to "10/06/2025" that allow for "2" adults
 
 Scenario: Incomplete hotel room search
-  Given that I am logged in as the user "Ana Clara" with the password "1234"
+  Given that I am logged in with the email "ana.clara@gmail.com" with the password "1234"
   And that my user is a guest
   And that I am on the page "/available-rooms"
   When I select the period from "01/05/2025" to "10/06/2025"
@@ -21,7 +21,7 @@ Scenario: Incomplete hotel room search
   And I receive an error message that states "Incomplete information"
 
 Scenario: Successful publishing of a hotel room
-  Given that I am logged in as the user "guilherme.fernandes@gmail.com" with the password "1234"
+  Given that I am logged in with the email "guilherme.fernandes@gmail.com" with the password "1234"
   And that my user is a hotel manager
   And that I am on the page "/hotel/rooms"
   When I select the option "Add New Hotel Room"
@@ -37,7 +37,7 @@ Scenario: Successful publishing of a hotel room
   And the system adds the hotel room with ID "Quarto 30" to my hotel
 
 Scenario: Unsuccessful publishing of a hotel room
-  Given that I am logged in as the user "Guilherme Fernandes" with the password "1234"
+  Given that I am logged in with the email "guilherme.fernandes@gmail.com" with the password "1234"
   And that my user is a "hotel manager"
   And that I am on the page "/hotel/rooms"
   When I select the option "Add New Hotel Room"
@@ -46,5 +46,5 @@ Scenario: Unsuccessful publishing of a hotel room
   And I fill in R$ "100,00" as the daily cost of booking
   And I add the photo "example.png"
   And I confirm
-  Then I am still on the "Add New Hotel Room"" section
+  Then I am still on the "Add New Hotel Room" section
   And I receive an error message that states "Incomplete information"
