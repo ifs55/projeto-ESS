@@ -23,3 +23,13 @@ Cenário: Admin edita um usuário comum
     E altero o email para “joao.silva@gmail.com”
     Quando clico em “salvar”
     Então os dados atualizados são salvos no banco de dados
+
+
+Cenário: Admin remove um usuário comum
+    Dado que acesso o sistema com o email "admin@hotelaria.com" e senha "admin123"
+    E sou autenticado com perfil de administrador
+    E estou na página “gerenciar usuários”
+    E clico em “remover” no usuário com nome “João Silva”
+    Quando confirmo a exclusão
+    Então o usuário é removido do banco de dados
+    E aparece a mensagem “usuário removido com sucesso”
